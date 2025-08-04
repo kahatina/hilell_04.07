@@ -1,12 +1,12 @@
-lst = [1, 0, 13, 0, 0, 0, 5]
-lst2 = lst.copy()
-i = len(lst2)
+import copy
 
-while 0 in lst:
-        lst.remove(0)
-        continue
+lst = [9, 0, 7, 31, 0, 45, 0, 45, 0, 45, 0, 0, 96, 0]
 
-while len(lst) != len(lst2):
-    lst.append(0)
-    continue
-print(lst)
+copy_of_lst = copy.deepcopy(lst)
+
+for n in lst:
+    if n == 0:
+        copy_of_lst.remove(n)
+        copy_of_lst.append(0)
+
+print(copy_of_lst)
