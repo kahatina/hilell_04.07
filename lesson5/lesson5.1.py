@@ -10,7 +10,7 @@ if not line:
 if line[0].isdigit():
     result = False
 
-if not line.islower():
+if any(с.isupper() for c in line):
     result = False
 
 if line in keyword.kwlist:
@@ -19,10 +19,12 @@ if line in keyword.kwlist:
 if " " in line:
     result = False
 
+if "__" in line:
+    result = False
+
 new_ban_list = string.punctuation.replace('_', '')
 for char in line:
     if char in new_ban_list:
         result = False
 
-if line.count("_") > 1:
-    result = False
+print(result)
