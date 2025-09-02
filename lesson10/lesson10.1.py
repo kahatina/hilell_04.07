@@ -1,4 +1,4 @@
-def pow(x):
+def pow(x: float) -> float:
     return x ** 2
 
 def some_gen(begin: int, end: int, func):
